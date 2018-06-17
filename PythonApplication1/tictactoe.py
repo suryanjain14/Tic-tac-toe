@@ -3,9 +3,7 @@ def nameinput():
     global play2
     play1 =input('Enter the name of player 1:')
     play2 =input('Enter the name of player 2:')
-def structure():
-    global no 
-    no=0
+def sett():
     global a
     global b
     global c
@@ -23,7 +21,17 @@ def structure():
     f=' '
     g=' '
     h=' '
-    i=''
+    i=' '
+def structure():
+    global a
+    global b
+    global c
+    global d
+    global e
+    global f
+    global g
+    global h
+    global i
     print(f'     |     |     ')
     print(f'   {a} |  {b}  |  {c} ')
     print(f'     |     |     ')
@@ -35,15 +43,23 @@ def structure():
     print(f'     |     |     ')
     print(f'   {g} |  {h}  |  {i} ')
     print(f'     |     |     ')
-def main():
-    print('Welcome to Tic Tac Toe')
-    print('X is for player one')
-    print('O is for player Two')
 def eng1():
-    global no
-    no=input('player ones chance')
+    global a
+    global b
+    global c
+    global d
+    global e
+    global f
+    global g
+    global h
+    global i
+    
+ 
+    no=int (input (f"player {play1}'s chance:"))
     if no==7:
+        print(a)
         a='X'
+        print(a)
     elif no==8:
         b='X'
     elif no==9:
@@ -62,11 +78,57 @@ def eng1():
         i='X'
     else:
        print('Wrong entry,')
-       eng1(no)
+       eng1()
+    print('\n'*100)
+    structure()
+def eng2():
+    global a
+    global b
+    global c
+    global d
+    global e
+    global f
+    global g
+    global h
+    global i
+    no=int (input (f"player {play2}'s chance:"))
+    if no==7:
+        print(a)
+        a='O'
+        print(a)
+    elif no==8:
+        b='O'
+    elif no==9:
+        c='O'
+    elif no==4:
+        d='O'
+    elif no==5:
+        e='O'
+    elif no==6:
+        f='O'
+    elif no==1:
+        g='O'
+    elif no==2:
+        h='O'
+    elif no==3:
+        i='O'
+    else:
+       print('Wrong entry,')
+       eng2()
+    print('\n'*100)
+    structure()
+def main():
+    sett()
+    print('Welcome to Tic Tac Toe')
+    print('X is for player one')
+    print('O is for player Two')
+    nameinput()
+    print("\n"*11)
+    structure()
+    k=0
+    while k<9:
+       eng1()
+       k=k+1
+       eng2()
+       k=k+1
 main()
-nameinput()
-structure()
-print('hello')
-no=input("player ones chance:")
-structure()
-eng1()
