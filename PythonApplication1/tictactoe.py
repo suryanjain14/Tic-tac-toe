@@ -39,8 +39,9 @@ def main():
     print('Welcome to Tic Tac Toe')
     print('X is for player one')
     print('O is for player Two')
-def eng1(no):
-  
+def eng1():
+    global no
+    no=input('player ones chance')
     if no==7:
         a='X'
     elif no==8:
@@ -60,7 +61,7 @@ def eng1(no):
     elif no==3:
         i='X'
     else:
-       no = input('Wrong entry, enter again:')
+       print('Wrong entry,')
        eng1(no)
 main()
 nameinput()
@@ -68,4 +69,4 @@ structure()
 print('hello')
 no=input("player ones chance:")
 structure()
-eng1(no)
+eng1()
