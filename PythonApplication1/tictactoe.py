@@ -3,6 +3,23 @@ def nameinput():
     global play2
     play1 =input('Enter the name of player 1:')
     play2 =input('Enter the name of player 2:')
+
+def win(nums):
+
+
+     winlst =[[1,4,7,'x'],[2,5,8,"c"],[3,6,9,'x'],[7,8,9,'x'],[4,5,6,'x'],[1,2,3,'x'],[1,5,9,'x'],[3,5,7,'x']]
+
+     code = [0,0,7,'x']
+    
+     for list in winlist:
+         code == list
+         for numb in nums:
+            if numb == code[0]:
+                code.pop(0)
+     if len(code)==1:
+         print('Player one wins')
+     else :
+         print('player two wins')
 def sett():
     global a
     global b
@@ -13,6 +30,7 @@ def sett():
     global g
     global h
     global i
+    global lst
     a=' '
     b=' '
     c=' ' 
@@ -22,6 +40,8 @@ def sett():
     g=' '
     h=' '
     i=' '
+    lst=[]
+
 def structure():
     global a
     global b
@@ -53,13 +73,12 @@ def eng1():
     global g
     global h
     global i
-    
- 
+    global lst 
     no=int (input (f"player {play1}'s chance:"))
+    lst.append(no)
     if no==7:
         print(a)
         a='X'
-        print(a)
     elif no==8:
         b='X'
     elif no==9:
@@ -78,9 +97,13 @@ def eng1():
         i='X'
     else:
        print('Wrong entry,')
+       lst.pop()
+       print('sda')
+       print('asd')
        eng1()
     print('\n'*100)
     structure()
+
 def eng2():
     global a
     global b
@@ -117,6 +140,10 @@ def eng2():
        eng2()
     print('\n'*100)
     structure()
+
+
+
+
 def main():
     sett()
     print('Welcome to Tic Tac Toe')
@@ -126,9 +153,21 @@ def main():
     print("\n"*11)
     structure()
     k=0
-    while k<9:
+    while k<=9:
        eng1()
        k=k+1
+       if k==9:
+           while 1<3:
+               ext =input('if you want to play again press Y if you want to exit press N')
+               if   ext == 'y':
+                   main()
+               elif ext==  'n':
+                   break
+               else:
+                   print('Error')
+       if k==9:
+           break
        eng2()
        k=k+1
+       
 main()
